@@ -1,0 +1,22 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: ruby
+    tag: 2.3.0
+
+inputs:
+- name: jml
+  path: ./flight-school/test/jml
+
+outputs:
+- name: environment
+
+run:
+  path: ./dryrun-test/bin/migrate-jml.rb
+  args:
+  - --jml
+  - ./flight-school/test/jml/jml-test
+  - --templateYML
+  - ~/git/Bluemix-CloudFoundry/cf-release-dedicated-spruce-template.yml

@@ -1,0 +1,14 @@
+resources:
+- name: jml
+  type: git
+  source:
+    uri: https://github.com/cookiefluffy/flight-school
+    branch: master
+
+jobs:
+- name: migrate-jml
+  plan:
+  - get: jml
+    trigger: true
+  - task: migrate-jml
+    file: flight-school/test/migrate-jml.yml
