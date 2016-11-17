@@ -7,4 +7,4 @@ pushd flight-school
   bundle exec rspec
 popd
 
-echo "pipeline demo 0"
+echo "pipeline demo 1"
